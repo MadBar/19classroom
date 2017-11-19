@@ -36,7 +36,7 @@ public class Student extends Person {
 	}
 
 	// void?
-	// Full off guesses. Maybe use setters here instead?
+	// Full off guesses. Should I use setters here instead?
 	public double calculateAverageGrade(double firstGrade, double secondGrade, double thirdGrade) {
 		// Option one my, doubting cause guid dont mention setters:
 		// setFirstGrade(firstGrade);
@@ -44,18 +44,15 @@ public class Student extends Person {
 		// setThirdGrade(thirdGrade);
 
 		// Do i need to save inputs in new variables or does this work?
-		setAverageGrade(firstGrade + secondGrade + thirdGrade / 3);
+		setAverageGrade(firstGrade + secondGrade + thirdGrade);
 		double averageGrade = getAverageGrade();
 
 		return averageGrade;
 	}
 
-	// Hmm..? How? This is just guesses
 	public boolean hasClearedTheCourse() {
 		boolean hasCleared = false;
 
-		// Check with debug to see if method really goes the right way in IF, else see
-		// toString below to use return in both validations
 		if (getAverageGrade() < 6.0) {
 
 		} else {
@@ -63,22 +60,6 @@ public class Student extends Person {
 		}
 
 		return hasCleared;
-	}
-
-	// What should be in the string? Put name etc in?
-	@Override
-	public String toString() {
-		calculateAverageGrade(this.firstGrade, this.secondGrade, this.thirdGrade);
-		DecimalFormat df = new DecimalFormat("#.0");
-		if (hasClearedTheCourse()) {
-			return "Student: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
-					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
-					+ "\nThe student has cleared the course" + "\n-----------------------------";
-		}else {
-			return "Student: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
-					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
-					+ "\nThe student has NOT cleared the course" + "\n-----------------------------";	
-		}
 	}
 
 	public double getFirstGrade() {
@@ -112,4 +93,22 @@ public class Student extends Person {
 	public void setAverageGrade(double averageGrade) {
 		this.averageGrade = averageGrade;
 	}
+
+	// Cant get the [] and the "," away from printing arrayList. Find and override
+	// how arraylist is printed?
+	@Override
+	public String toString() {
+		calculateAverageGrade(this.firstGrade, this.secondGrade, this.thirdGrade);
+		DecimalFormat df = new DecimalFormat("#.0");
+		if (hasClearedTheCourse()) {
+			return "\nStudent: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
+					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
+					+ "\nThe student has cleared the course" + "\n-----------------------------\n";
+		} else {
+			return "\nStudent: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
+					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
+					+ "\nThe student has NOT cleared the course" + "\n-----------------------------\n";
+		}
+	}
+
 }

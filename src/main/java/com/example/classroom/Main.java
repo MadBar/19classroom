@@ -18,6 +18,19 @@ public class Main {
 		cr.addANewStudent(stud2);
 		cr.addANewStudent(stud3);
 		
+		stud1.setFirstGrade(2);
+		stud1.setSecondGrade(1);
+		stud1.setThirdGrade(2);
+		
+		stud2.setFirstGrade(3);
+		stud2.setSecondGrade(2);
+		stud2.setThirdGrade(1);
+		
+		stud3.setFirstGrade(5);
+		stud3.setSecondGrade(4);
+		stud3.setThirdGrade(4);
+		
+		
 		cr.printFullRelatory();
 	}
 

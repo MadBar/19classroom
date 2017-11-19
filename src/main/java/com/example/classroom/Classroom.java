@@ -46,7 +46,7 @@ public class Classroom {
 	public void printFullRelatory() {
 		System.out
 				.println("Classroom name: " + classroomName + ", Term: " + 
-		classroomTerm + "\n" + students.toString());
+		classroomTerm + "\n" + students.toString() + "\n");
 	}
 
 	public String getClassroomName() {
