@@ -19,16 +19,16 @@ public class Main {
 		cr.addANewStudent(stud3);
 
 		stud1.setFirstGrade(2);
-		stud1.setSecondGrade(1);
-		stud1.setThirdGrade(2);
+		stud1.setSecondGrade(1.2);
+		stud1.setThirdGrade(2.7);
 
-		stud2.setFirstGrade(3);
-		stud2.setSecondGrade(2);
-		stud2.setThirdGrade(1);
+		stud2.setFirstGrade(3.1);
+		stud2.setSecondGrade(2.2);
+		stud2.setThirdGrade(1.5);
 
-		stud3.setFirstGrade(5);
-		stud3.setSecondGrade(4);
-		stud3.setThirdGrade(4);
+		stud3.setFirstGrade(5.4);
+		stud3.setSecondGrade(4.3);
+		stud3.setThirdGrade(4.1);
 
 		cr.printFullRelatory();
 
@@ -39,6 +39,15 @@ public class Main {
 		
 		//Remove non existing Student
 		cr.removeAStudent("Madeleine");
+		
+		System.out.println();
+		cr.printFullRelatory();
+		
+		Student stud4 = new Student(30, "Madeleine", "Trollvik", 'F');
+		cr.addANewStudent(stud4);
+		stud4.setFirstGrade(4.3);
+		stud4.setSecondGrade(5);
+		stud4.setThirdGrade(4.9);
 		
 		System.out.println();
 		cr.printFullRelatory();
