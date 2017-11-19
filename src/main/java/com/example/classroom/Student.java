@@ -1,5 +1,7 @@
 package com.example.classroom;
 
+import java.text.DecimalFormat;
+
 public class Student extends Person {
 	private double firstGrade = 5.0;
 	private double secondGrade = 5.0;
@@ -40,8 +42,8 @@ public class Student extends Person {
 		// setFirstGrade(firstGrade);
 		// setSecondGrade(secondGrade);
 		// setThirdGrade(thirdGrade);
-		
-		//Do i need to save inputs in new variables or does this work? 
+
+		// Do i need to save inputs in new variables or does this work?
 		setAverageGrade(firstGrade + secondGrade + thirdGrade / 3);
 		double averageGrade = getAverageGrade();
 
@@ -51,14 +53,32 @@ public class Student extends Person {
 	// Hmm..? How? This is just guesses
 	public boolean hasClearedTheCourse() {
 		boolean hasCleared = false;
+
+		// Check with debug to see if method really goes the right way in IF, else see
+		// toString below to use return in both validations
+		if (getAverageGrade() < 6.0) {
+
+		} else {
+			hasCleared = true;
+		}
+
 		return hasCleared;
 	}
 
 	// What should be in the string? Put name etc in?
 	@Override
 	public String toString() {
-		return "Student [firstGrade=" + firstGrade + ", secondGrade=" + secondGrade + ", thirdGrade=" + thirdGrade
-				+ ", averageGrade=" + averageGrade + "]";
+		calculateAverageGrade(this.firstGrade, this.secondGrade, this.thirdGrade);
+		DecimalFormat df = new DecimalFormat("#.0");
+		if (hasClearedTheCourse()) {
+			return "Student: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
+					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
+					+ "\nThe student has cleared the course" + "\n-----------------------------";
+		}else {
+			return "Student: " + getFirstName() + " " + getLastName() + "\nGrades: " + getFirstGrade() + ", "
+					+ getSecondGrade() + ", " + getThirdGrade() + "\nFinal Grade: " + df.format(getAverageGrade())
+					+ "\nThe student has NOT cleared the course" + "\n-----------------------------";	
+		}
 	}
 
 	public double getFirstGrade() {
