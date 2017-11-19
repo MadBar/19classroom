@@ -19,24 +19,42 @@ public class Student extends Person {
 		this.thirdGrade = thirdGrade;
 		this.averageGrade = averageGrade;
 	}
-	
-	//void??
-	public void calculateAverageGrade() {
 
-	}
-	
-	//void?
-	public void calculateAverageGrade(double firstGrade, double secondGrade, double thirdGrade) {
+	// How I interpret guide
+	public double calculateAverageGrade() {
+		// Unnecessary to use getters and setters??
+		double firstGrade = getFirstGrade();
+		double secondGrade = getSecondGrade();
+		double thirdGrade = getThirdGrade();
 
+		setAverageGrade(firstGrade + secondGrade + thirdGrade / 3);
+		double averageGrade = getAverageGrade();
+
+		return averageGrade;
 	}
-	
-	//Hmm..? How? This is just guesses
+
+	// void?
+	// Full off guesses. Maybe use setters here instead?
+	public double calculateAverageGrade(double firstGrade, double secondGrade, double thirdGrade) {
+		// Option one my, doubting cause guid dont mention setters:
+		// setFirstGrade(firstGrade);
+		// setSecondGrade(secondGrade);
+		// setThirdGrade(thirdGrade);
+		
+		//Do i need to save inputs in new variables or does this work? 
+		setAverageGrade(firstGrade + secondGrade + thirdGrade / 3);
+		double averageGrade = getAverageGrade();
+
+		return averageGrade;
+	}
+
+	// Hmm..? How? This is just guesses
 	public boolean hasClearedTheCourse() {
 		boolean hasCleared = false;
 		return hasCleared;
 	}
 
-	//What should be in the string? Put name etc in? 
+	// What should be in the string? Put name etc in?
 	@Override
 	public String toString() {
 		return "Student [firstGrade=" + firstGrade + ", secondGrade=" + secondGrade + ", thirdGrade=" + thirdGrade
@@ -46,7 +64,7 @@ public class Student extends Person {
 	public double getFirstGrade() {
 		return firstGrade;
 	}
-	
+
 	public void setFirstGrade(double firstGrade) {
 		this.firstGrade = firstGrade;
 	}
