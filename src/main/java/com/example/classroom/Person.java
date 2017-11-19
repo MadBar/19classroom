@@ -1,10 +1,10 @@
 package com.example.classroom;
 
 public class Person {
-	private int age = 0;
-	private String firstName = "";
-	private String lastName = "";
-	private char gender = ' ';
+	private int age = 30;
+	private String firstName = "Madeleine";
+	private String lastName = "Barwén";
+	private char gender = 'F';
 
 	public Person(int age, String firstName, String lastName, char gender) {
 

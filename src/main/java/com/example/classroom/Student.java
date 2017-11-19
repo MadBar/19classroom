@@ -1,10 +1,10 @@
 package com.example.classroom;
 
 public class Student extends Person {
-	private double firstGrade = 0.0;
-	private double secondGrade = 0.0;
-	private double thirdGrade = 0.0;
-	private double averageGrade = 0.0;
+	private double firstGrade = 5.0;
+	private double secondGrade = 5.0;
+	private double thirdGrade = 5.0;
+	private double averageGrade = 5.0;
 
 	public Student(int age, String firstName, String lastName, char gender) {
 		super(age, firstName, lastName, gender);
@@ -20,17 +20,23 @@ public class Student extends Person {
 		this.averageGrade = averageGrade;
 	}
 	
+	//void??
 	public void calculateAverageGrade() {
 
 	}
 	
-	//Hmm..? How?
+	//void?
+	public void calculateAverageGrade(double firstGrade, double secondGrade, double thirdGrade) {
+
+	}
+	
+	//Hmm..? How? This is just guesses
 	public boolean hasClearedTheCourse() {
 		boolean hasCleared = false;
 		return hasCleared;
 	}
 
-	//What should be in the string?
+	//What should be in the string? Put name etc in? 
 	@Override
 	public String toString() {
 		return "Student [firstGrade=" + firstGrade + ", secondGrade=" + secondGrade + ", thirdGrade=" + thirdGrade
