@@ -14,7 +14,7 @@ public class Classroom {
 		this.students = students;
 	}
 
-	// ?? I added void, makes sense to me. Solve syntax! 
+	// ?? I added void, makes sense to me. Solve syntax!
 	public void removeAStudent(String firstName) {
 
 		// This could possibly be in if statement?
@@ -44,7 +44,9 @@ public class Classroom {
 
 	// ?? void?
 	public void printFullRelatory() {
-
+		System.out
+				.println("Classroom name: " + classroomName + ", Term: " + 
+		classroomTerm + "\n" + students.toString());
 	}
 
 	public String getClassroomName() {
