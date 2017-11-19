@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Classroom {
 	private String classroomName = "Kvalit17";
 	private String classroomTerm = "Fall2017";
-	// How declare arraylist?
+	// Do you declare arraylist like this?
 	private ArrayList<Student> students = new ArrayList<Student>();
 
 	public Classroom(String classroomName, String classroomTerm, ArrayList<Student> students) {
@@ -28,6 +28,49 @@ public class Classroom {
 		// System.out.println("The student does not exist!");
 		// }
 
+		// Tests:
+		// ArrayList<String> listClone = new ArrayList<String>();
+
+		// This does somthing! Found alot
+		boolean foundName = false;
+
+		if (foundName == false) {
+			// Roll throughh all objects in list
+			for (int i = 0; i < students.size(); i++) {
+				// boolean foundName = false;
+				// if (foundName == false) {
+				if (students.get(i).getFirstName() == firstName) {
+
+					students.remove(i);
+					System.out.println("Student: "+ firstName + " was successfully removed.");
+					foundName = true;
+				}
+				// else if(students.get(i).getFirstName() != firstName) {
+
+				// }
+			}
+			if (foundName == false) {
+				System.out.println("Student: "+ firstName+ " does not exist!");
+			}
+
+			// else {
+			// System.out.println("Doesnt contain");
+			// }
+			//
+
+			// for (int i = 0; i < students.size(); i++) {
+			//
+			//
+			// //Student student = students.contains(firstName);
+			//
+			//// for (String match : students.indexOf(i)) {
+			//// // Want to do:
+			//// // if(students.indexOf(i)== firstName){
+			//// listClone.add(string);
+			//// // }
+			//// }
+		}
+
 	}
 
 	// ?? says nothing about void but doesnt seem to need to return.. I add void.
@@ -44,9 +87,8 @@ public class Classroom {
 
 	// ?? void?
 	public void printFullRelatory() {
-		System.out
-				.println("Classroom name: " + classroomName + ", Term: " + 
-		classroomTerm + "\n" + students.toString() + "\n");
+		System.out.println(
+				"Classroom name: " + classroomName + ", Term: " + classroomTerm + "\n" + students.toString() + "\n");
 	}
 
 	public String getClassroomName() {
