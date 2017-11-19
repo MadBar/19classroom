@@ -70,7 +70,23 @@ public class Classroom {
 			//// // }
 			//// }
 		}
-
+		
+		//Raf's solution. LOOK INTO LATER
+//		Student student = null;
+//		boolean studentExists = false;
+//		
+//		for(int i= 0 ; i < this.students.size() ; i++){
+//			student = this.students.get(i);
+//			if (student.getFirstName().equals(firstName)){
+//				studentExists = true;
+//				this.students.remove(i);
+//				System.out.println("Student "+firstName+" successfully removed!");
+//			}	
+//		}
+//		
+//		if (!studentExists){
+//			System.out.println("The student does not exist!");
+//		}
 	}
 
 	// ?? says nothing about void but doesnt seem to need to return.. I add void.
@@ -89,6 +105,15 @@ public class Classroom {
 	public void printFullRelatory() {
 		System.out.println(
 				"Classroom name: " + classroomName + ", Term: " + classroomTerm + "\n" + students.toString() + "\n");
+
+		//RAFS SOLUTION: LOOK INTO LATER
+//		System.out.println("Classroom name: "+this.classroomName);
+//		System.out.println("Classroom term: "+this.classroomTerm+"\n");
+//		
+//		for (Student student : this.students){
+//			System.out.println(student.toString());
+//		}
+
 	}
 
 	public String getClassroomName() {

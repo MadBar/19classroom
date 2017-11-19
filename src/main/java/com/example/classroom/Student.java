@@ -14,12 +14,19 @@ public class Student extends Person {
 	}
 
 	public Student(int age, String firstName, String lastName, char gender, double firstGrade, double secondGrade,
-			double thirdGrade, double averageGrade) {
+			double thirdGrade) {
 		super(age, firstName, lastName, gender);
 		this.firstGrade = firstGrade;
 		this.secondGrade = secondGrade;
 		this.thirdGrade = thirdGrade;
 		this.averageGrade = averageGrade;
+
+		// Raf solution intead of line 22:
+		// Weird to devide by 3 if you cant get more than 5 for a grade. Maybe you can
+		// get 10 but not relevant. changes the syntax but not difficult.
+		// double average = ((firstGrade + secondGrade + thirdGrade) / 3);
+		// this.averageGrade = average;
+
 	}
 
 	// How I interpret guide
@@ -33,6 +40,13 @@ public class Student extends Person {
 		double averageGrade = getAverageGrade();
 
 		return averageGrade;
+
+		// Raf, look into later he has same syntax in both calculateAverageGrade(),
+		// calculateAverageGrade(parameters) who's right?:
+		// double average = ((firstGrade + secondGrade + thirdGrade) / 3);
+		// setAverageGrade(average);
+		// return average;
+
 	}
 
 	// void?
@@ -48,9 +62,18 @@ public class Student extends Person {
 		double averageGrade = getAverageGrade();
 
 		return averageGrade;
+
+		// Raf, look into later he has same syntax in both calculateAverageGrade(),
+		// calculateAverageGrade(parameters) who's right?:
+		// double average = ((firstGrade + secondGrade + thirdGrade) / 3);
+		// setAverageGrade(average);
+		// return average;
+
 	}
 
 	public boolean hasClearedTheCourse() {
+
+		// not needed
 		boolean hasCleared = false;
 
 		if (getAverageGrade() < 6.0) {
@@ -59,6 +82,7 @@ public class Student extends Person {
 			hasCleared = true;
 		}
 
+		// Have this be instead of declaring line 63: return false:
 		return hasCleared;
 	}
 
